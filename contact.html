@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Контакты — Край белых берёз</title>
+<meta name="description" content="Контактная информация и форма обратной связи для проекта Край белых берёз — Северный Казахстан." />
+
+<style>
+:root {
+  --bg:#f7f8fb;
+  --card:#ffffff;
+  --accent:#2b8cff;
+  --muted:#6b7280;
+  --radius:12px;
+}
+* { box-sizing: border-box; margin:0; padding:0; }
+body {
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  background: var(--bg);
+  color:#111;
+}
+
+/* ----- Шапка ----- */
+header {
+  background: linear-gradient(180deg, rgba(43,140,255,0.06), transparent);
+  backdrop-filter: blur(2px);
+}
+.container {
+  max-width:1100px;
+  margin:0 auto;
+  padding:24px;
+}
+nav {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.logo {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:700;
+}
+.logo .mark {
+  width:44px;
+  height:44px;
+  border-radius:10px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 2px 8px rgba(16,24,40,.06);
+}
+
+/* ----- Меню ----- */
+.nav-links a {
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+  padding:8px 14px;
+  border-radius:8px;
+  transition:0.3s;
+}
+.nav-links a:hover {
+  background:rgba(43,140,255,0.1);
+}
+.nav-links a.active {
+  background:var(--accent);
+  color:#fff;
+}
+.nav-links {
+  display:flex;
+  gap:12px;
+}
+
+/* ----- Контент ----- */
+h1 {
+  font-size:32px;
+  margin-bottom:12px;
+}
+p.lead {
+  color:var(--muted);
+  margin-bottom:20px;
+}
+
+.contact-card {
+  background:var(--card);
+  padding:24px;
+  border-radius:var(--radius);
+  box-shadow:0 6px 20px rgba(13,38,59,0.05);
+  margin-top:20px;
+}
+
+form {
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-top:16px;
+}
+input, textarea {
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-size:15px;
+  resize:none;
+}
+button {
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:10px 14px;
+  border-radius:10px;
+  font-size:15px;
+  cursor:pointer;
+  transition:0.3s;
+}
+button:hover {
+  background:#1a74e8;
+}
+
+footer {
+  padding:28px 0;
+  color:var(--muted);
+  text-align:center;
+  font-size:14px;
+  margin-top:40px;
+}
+
+/* ----- Адаптивность ----- */
+@media(min-width:768px){
+  h1 { font-size:40px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <div class="mark">🌿</div>
+        <div>
+          <div>Край белых берёз</div>
+          <div class="muted" style="font-size:12px">Северо-Казахстанская область</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="gallery.html">Лекарственные свойства берёзы</a>  
+        <a href="about.html">О крае</a>
+        <a href="contact.html" class="active">Контакты</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="container">
+  <h1>Свяжитесь с нами</h1>
+  <p class="lead">Если у вас есть предложения, вопросы или идеи для сотрудничества — напишите нам. Мы будем рады вашему сообщению.</p>
+
+  <div class="contact-card">
+    <h3>Контактная информация</h3>
+    <p><strong>Адрес:</strong> г. Петропавловск, Северо-Казахстанская область</p>
+    <p><strong>Email:</strong> kaliny_2010@mail.ru</p>
+    <p><strong>Телефон:</strong> +7 707 756 8897</p>
+    <p><strong>Руководитель проекта:</strong> Калина Даяна Тимуровна</p>
+
+    <form>
+      <label>Ваше имя:</label>
+      <input type="text" placeholder="Введите имя" required>
+
+      <label>Email:</label>
+      <input type="email" placeholder="Введите email" required>
+
+      <label>Сообщение:</label>
+      <textarea rows="5" placeholder="Ваше сообщение..." required></textarea>
+
+      <button type="button" onclick="alert('Ваше сообщение отправлено! (демо)')">Отправить</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2025 Край белых берёз — Северо-Казахстанская область
+  </div>
+</footer>
+
+</body>
+</html>

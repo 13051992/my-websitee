@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Край белых берёз — Северный Казахстан</title>
+<meta name="description" content="Сайт о природе и красоте Северо-Казахстанской области — крае белых берёз, озёр и бескрайних просторов." />
+
+<style>
+:root {
+  --bg:#f7f8fb;
+  --card:#ffffff;
+  --accent:#2b8cff;
+  --muted:#6b7280;
+  --radius:12px;
+}
+* { box-sizing: border-box; margin:0; padding:0; }
+body {
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  background: var(--bg);
+  color:#111;
+}
+
+/* ----- Шапка ----- */
+header {
+  background: linear-gradient(180deg, rgba(43,140,255,0.06), transparent);
+  backdrop-filter: blur(2px);
+}
+.container {
+  max-width:1100px;
+  margin:0 auto;
+  padding:24px;
+}
+nav {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.logo {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:700;
+}
+.logo .mark {
+  width:44px;
+  height:44px;
+  border-radius:10px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 2px 8px rgba(16,24,40,.06);
+}
+
+/* ----- Меню ----- */
+.nav-links a {
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+  padding:8px 14px;
+  border-radius:8px;
+  transition:0.3s;
+}
+.nav-links a:hover {
+  background:rgba(43,140,255,0.1);
+}
+.nav-links a.active {
+  background:var(--accent);
+  color:#fff;
+}
+.nav-links {
+  display:flex;
+  gap:12px;
+}
+
+/* ----- Главный блок ----- */
+.hero {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+  align-items:center;
+  padding:28px 0;
+}
+.hero-inner {
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+h1 { font-size:28px; margin:0; }
+p.lead { color:var(--muted); margin:0; }
+.cta { margin-top:10px; }
+.btn {
+  background:var(--accent);
+  color:#fff;
+  padding:10px 14px;
+  border-radius:10px;
+  text-decoration:none;
+  display:inline-block;
+}
+
+/* ----- Галерея ----- */
+.gallery {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+.gallery img {
+  width:100%;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  transition:transform 0.2s ease;
+  cursor:pointer;
+}
+.gallery img:hover { transform:scale(1.05); }
+
+/* ----- Всплывающее окно ----- */
+.lightbox {
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+.lightbox img {
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
+  box-shadow:0 0 20px rgba(255,255,255,0.2);
+}
+
+/* ----- Доп. информация ----- */
+.hidden {
+  display:none;
+  opacity:0;
+  transition:opacity 0.6s ease;
+}
+.visible {
+  display:block;
+  opacity:1;
+  transition:opacity 0.6s ease;
+}
+
+/* ----- Подвал ----- */
+footer {
+  padding:28px 0;
+  color:var(--muted);
+  text-align:center;
+  font-size:14px;
+}
+
+/* ----- Адаптивность ----- */
+@media(min-width:768px){
+  h1 { font-size:40px; }
+  .hero { grid-template-columns:1fr 380px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <div class="mark">🌿</div>
+        <div>
+          <div>Край белых берёз</div>
+          <div class="muted" style="font-size:12px">Северо-Казахстанская область</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="gallery.html">Лекарственные свойства берёзы</a>  
+        <a href="about.html">О крае</a>
+        <a href="contact.html">Контакты</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== Главный блок с кнопкой "Узнать больше" ===== -->
+<section class="hero container">
+  <div class="hero-inner">
+    <span class="pill">Край белых берёз</span>
+    <h1>Северный Казахстан — земля берёз, озёр и просторов</h1>
+    <p class="lead">
+      Небольшой сайт-презентация для рассказа о природе, живописных уголках и истории Северо-Казахстанской области — приглашение посетить край белых берёз.
+    </p>
+    <div class="cta">
+      <a class="btn" href="javascript:void(0)" onclick="toggleInfo()">Узнать больше</a>
+    </div>
+  </div>
+
+  <!-- Фото -->
+  <div style="border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(16,24,40,.06)">
+    <img src="11.jpg" alt="Белые березы Северного Казахстана — весна" />
+  </div>
+</section>
+
+<!-- ===== Галерея ===== -->
+<section id="gallery" class="container">
+  <h2>Природа Северного Казахстана</h2>
+  <p class="muted">Зоны отдыха родного края</p>
+
+  <div class="gallery">
+    <img src="1.jpg" alt="Берёзовая роща летом" onclick="openImage(this)" />
+    <img src="2.jpg" alt="Детский лагерь Берёзка" onclick="openImage(this)" />
+    <img src="3.jpeg" alt="Парк-отель Пестрое" onclick="openImage(this)" />
+    <img src="4.jpg" alt="Простаквашино" onclick="openImage(this)" />
+    <img src="5.jpg" alt="Волна" onclick="openImage(this)" />
+    <img src="6.jpg" alt="Мещанский лес" onclick="openImage(this)" />
+  </div>
+</section>
+
+<!-- ===== Всплывающее изображение ===== -->
+<div id="lightbox" class="lightbox" onclick="closeImage()">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- ===== Дополнительная информация (по умолчанию скрыта) ===== -->
+<section id="more-info" class="container hidden">
+  <h2>О Северо-Казахстанском крае</h2>
+  <p>
+    Северный Казахстан — удивительный регион, где бескрайние степи соседствуют с кристально чистыми озёрами и величественными берёзовыми рощами.  
+    Здесь каждый сезон по-своему прекрасен: весной земля пробуждается от долгой зимы, летом поля золотятся под солнцем, осенью природа расцветает в багряных тонах, а зимой просторы покрываются снежным покрывалом.  
+    В этом крае сохранилась особая гармония между человеком и природой, что делает его уникальным для путешественников и исследователей.  
+    Озёра Имантау, Шалкар, Пестрое и множество малых водоёмов — жемчужины северного края.  
+    Этот регион также славится богатой историей, традициями гостеприимства и трудолюбием своих жителей.  
+    Приезжая сюда, каждый чувствует дыхание природы и тепло северного солнца.
+  </p>
+</section>
+
+<footer>
+  <div class="container">
+    © 2025 Край белых берёз — Северо-Казахстанская область
+  </div>
+</footer>
+
+<script>
+function openImage(imgElement) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  lightboxImg.src = imgElement.src;
+  lightbox.style.display = 'flex';
+}
+function closeImage() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+function toggleInfo() {
+  const infoSection = document.getElementById('more-info');
+  if (infoSection.classList.contains('hidden')) {
+    infoSection.classList.remove('hidden');
+    infoSection.classList.add('visible');
+    infoSection.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+</script>
+
+</body>
+</html>
